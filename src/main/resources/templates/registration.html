@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Registration</title>
+</head>
+<body style="background-color: #D1E8E2">
+<div style="text-align: center; margin-top: 15px">
+    <div style="text-align: center; margin-top: 15px" th:if="${#messages}">
+        <p th:text="${message}"></p>
+    </div>
+    Регистрация нового пользователя
+    <form style="text-align: center; margin-top: 15px" th:action="@{/registration}" method="post">
+        <div style="text-align: center; margin-top: 15px"><label> User Name : <input type="text" name="username"/> </label></div>
+        <div style="text-align: center; margin-top: 15px"><label> Password: <input type="password" name="password"/> </label></div>
+        <div style="text-align: center; margin-top: 15px"><button style="margin-top: 10px" class="btn btn-warning" type="submit">Sign In</button></div>
+    </form>
+</div>
+</body>
+</html>

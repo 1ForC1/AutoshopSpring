@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Склады</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body style="background-color: #D1E8E2">
+<div th:insert="blocks/header">
+</div>
+<h1 style="text-align: center">Все склады</h1>
+<a style="margin-left: 15px" class="btn btn-warning" href="/warehouse/filter">Поиск складов</a>
+<a style="margin-left: 15px" class="btn btn-warning" href="/warehouse/add">Добавить склад</a>
+
+<table style="background-color: #FFCB9A" class="table">
+    <div th:each="el : ${warehouse}">
+        <tr>
+            <th>Адрес</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th><h5 th:text="${el.address}" ></h5></th>
+            <th><a th:href="'/warehouse/' + ${el.id}" class="btn btn-outline-success">Подробнее</a></th>
+        </tr>
+    </div>
+</table>
+</body>
+</html>

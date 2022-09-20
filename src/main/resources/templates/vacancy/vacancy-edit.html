@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Редактирование вакансии</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body style="background-color: #D1E8E2">
+<div>
+    <form style="text-align: center" th:action="${'/vacancy/add'}" th:object="${vacancy}" method="post">
+        <input th:value="${vacancy.getPost()}" th:field="*{post}" style="margin-top: 10px" type="text" required name="post" placeholder="Введите должность">
+        <div style="color: red" th:if="${#fields.hasErrors('post')}" th:errors="*{post}"></div><br>
+
+        <input th:value="${vacancy.getSalary()}" th:field="*{salary}" style="margin-top: 10px" type="number" name="salary" required placeholder="Введите оклад">
+        <div style="color: red" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></div><br>
+
+        <input th:value="${vacancy.getDescription()}" th:field="*{description}" style="margin-top: 10px" type="text" required name="description" placeholder="Описание">
+        <div style="color: red" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div><br>
+
+        <select th:value="${vacancy.autoshop.getTitle()}" name="title">
+            <div th:each="element : ${autoshop}">
+                <option th:text="${element.title}"></option>
+            </div>
+        </select><br>
+        <button style="margin-top: 10px" class="btn btn-warning" type="submit">Изменить вакансию</button>
+    </form>
+</div>
+</body>
+</html>

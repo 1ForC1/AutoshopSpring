@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body style="background-color: #D1E8E2">
+<div th:insert="blocks/header"></div>
+<h2 style="text-align: center;margin-top: 10px">Поиск вакансий</h2>
+<form style="text-align: center" method="post" th:action="${'/vacancy/filter/result'}">
+    <input style="margin-top: 10px" type="text" name="post"><br>
+    <button style="margin-top: 10px" class="btn btn-warning" type="submit">Найти</button>
+    <div th:each="el : ${result}">
+        <h3 th:text="${el.post} + ' ' + ${el.salary}"></h3>
+    </div>
+</form>
+</body>
+</html>

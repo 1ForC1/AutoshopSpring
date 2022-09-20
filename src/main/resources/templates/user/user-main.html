@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Пользователи</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body style="background-color: #D1E8E2">
+<div th:insert="blocks/header">
+</div>
+<h1 style="text-align: center">Все пользователи</h1>
+<a style="margin-left: 15px" class="btn btn-warning" href="/user/filter">Поиск пользователей</a>
+<a style="margin-left: 15px" class="btn btn-warning" href="/user/add">Добавить пользователя</a>
+
+<table style="background-color: #FFCB9A" class="table">
+    <div th:each="el : ${user}">
+        <tr>
+            <th>Фамилия</th>
+            <th>Имя</th>
+            <th>Отчество</th>
+            <th></th>
+        </tr>
+        <tr>
+            <th><h5 th:text="${el.surname}" ></h5></th>
+            <th><h5 th:text="${el.name}"></h5></th>
+            <th><h5 th:text="${el.patronymic}"></h5></th>
+            <th><a th:href="'/user/' + ${el.id}" class="btn btn-outline-success">Подробнее</a></th>
+        </tr>
+    </div>
+</table>
+</body>
+</html>

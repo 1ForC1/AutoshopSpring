@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Autoshop</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+<body style="background-color: #D1E8E2">
+<div th:insert="blocks/header">
+</div>
+        <form style="text-align: center; margin-top: 10px" th:action="${'/autoshop'}" method="get">
+            <input type="submit" value="Магазины" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/brand'}" method="get">
+            <input type="submit" value="Бренды" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/carBrand'}" method="get">
+            <input type="submit" value="Марки авто" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/country'}" method="get">
+            <input type="submit" value="Страны" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/service'}" method="get">
+            <input type="submit" value="Услуги" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/sparePart'}" method="get">
+            <input type="submit" value="Запчасти" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/sparePartType'}" method="get">
+            <input type="submit" value="Типы запчастей" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/supplier'}" method="get">
+            <input type="submit" value="Поставщики" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/user'}" method="get">
+            <input type="submit" value="Пользователи" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/vacancy'}" method="get">
+            <input type="submit" value="Вакансии" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/warehouse'}" method="get">
+            <input type="submit" value="Склады" class="btn btn-warning">
+        </form>
+
+        <form style="text-align: center; margin-top: 10px" th:action="${'/zakaz'}" method="get">
+            <input type="submit" value="Заказы" class="btn btn-warning">
+        </form>
+</body>
+</html>
