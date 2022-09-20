@@ -4,6 +4,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.Set;
 
@@ -12,8 +14,15 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Size(min=2, max = 50, message = "Размер данного поля должен быть в диапозене от 2 до 50")
+    @NotEmpty(message = "Поле не может быть пустым")
     private String surname, name, patronymic;
+    @Size(min=2, max = 50, message = "Размер данного поля должен быть в диапозене от 2 до 50")
+    @NotEmpty(message = "Поле не может быть пустым")
     private String username;
+    @Size(min=2, max = 50, message = "Размер данного поля должен быть в диапозене от 2 до 50")
+    @NotEmpty(message = "Поле не может быть пустым")
     private String password;
     private boolean active;
 

@@ -8,12 +8,12 @@
 <body style="background-color: #D1E8E2">
 <div>
     <form style="text-align: center" th:object="${zakaz}" method="post">
-        <select th:value="${zakaz.user.getUsername()}" name="username">
+        <select th:value="${zakaz.user.getUsername()}" required name="username">
             <div th:each="element : ${user}">
                 <option th:text="${element.username}"></option>
             </div>
         </select><br>
-        <select th:value="${zakaz.autoshop.getTitle()}" name="title">
+        <select th:value="${zakaz.autoshop.getTitle()}" required name="title">
             <div th:each="element : ${autoshop}">
                 <option th:text="${element.title}"></option>
             </div>

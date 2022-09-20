@@ -68,7 +68,7 @@ public class VacancyController {
         ArrayList<Vacancy> res = new ArrayList<>();
         vacancy.ifPresent(res::add);
         model.addAttribute("vacancy", res);
-        if(!autoshopRepository.existsById(id))
+        if(!vacancyRepository.existsById(id))
         {
             return "redirect:/vacancy";
         }

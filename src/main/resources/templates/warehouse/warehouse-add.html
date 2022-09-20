@@ -11,7 +11,7 @@
         <input th:field="*{address}" style="margin-top: 10px" type="text" required name="address" placeholder="Введите адрес">
         <div style="color: red" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div><br>
 
-        <select name="title">
+        <select name="title" required>
             <div th:each="element : ${supplier}">
                 <option th:text="${element.title}"></option>
             </div>

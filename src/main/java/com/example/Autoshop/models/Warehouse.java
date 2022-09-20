@@ -1,6 +1,7 @@
 package com.example.Autoshop.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 
 @Entity
@@ -9,6 +10,7 @@ public class Warehouse {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotEmpty(message = "Поле не может быть пустым")
     private String address;
 
     public Warehouse() {

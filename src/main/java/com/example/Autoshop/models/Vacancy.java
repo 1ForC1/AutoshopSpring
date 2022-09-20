@@ -1,6 +1,8 @@
 package com.example.Autoshop.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Vacancy {
@@ -8,10 +10,14 @@ public class Vacancy {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Size(min=2, max = 50, message = "Размер данного поля должен быть в диапозене от 2 до 50")
+    @NotEmpty(message = "Поле не может быть пустым")
     private String post;
 
     private double salary;
 
+    @Size(min=2, max = 200, message = "Размер данного поля должен быть в диапозене от 2 до 200")
+    @NotEmpty(message = "Поле не может быть пустым")
     private String description;
 
     @ManyToOne(optional = true, cascade = CascadeType.ALL)
